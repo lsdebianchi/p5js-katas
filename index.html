@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>P5 Katas</title>
+    <link rel="stylesheet" href="/index.css"></link>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.11.7/lib/p5.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>P5 js exercises</h1>
+      <p>
+        Look at the drawings below and try to recreate them with the <a href="https://editor.p5js.org/">p5.js editor</a>.
+        If you get stuck you can press on <i>hint</i> to get some help.
+      </p>
+      <ul>
+        <li>🌱 = normal, should be solved in order</li>
+        <li>🌻 = medium, optional</li>
+        <li>🍄 = hard, for who wants a challenge</li>
+      </ul>
+
+      <div class="break"></div>
+
+      <h2>Exercise 1</h2>
+
+      <div class="exercise">
+        <h3>1.1 Moving circle 🌱</h3>
+        <div data-src="exercise/code1.html"></div>
+        <details>
+          <summary>hint</summary>
+          <p>some info</p>
+          <p></p>
+        </details>
+      </div>
+
+      <div class="exercise">
+        <h3>Moving circle</h3>
+        <div data-src="exercise/code1.html"></div>
+        <details>
+          <summary>hint</summary>
+          <p>some info</p>
+          <p></p>
+        </details>
+      </div>
+
+      <div class="exercise">
+        <h3>Moving circle</h3>
+        <div data-src="exercise/code2.html"></div>
+        <details>
+          <summary>hint</summary>
+          <p>some info</p>
+          <p></p>
+        </details>
+      </div>
+
+    </main>
+
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const container = entry.target;
+          if (entry.isIntersecting) {
+            if (!container.querySelector('iframe')) {
+              const iframe = document.createElement('iframe');
+              iframe.src = container.dataset.src;
+              container.appendChild(iframe);
+            }
+          } else {
+            const iframe = container.querySelector('iframe');
+            if (iframe) {
+              iframe.remove(); // clean it up
+            }
+          }
+        });
+      }, {
+        threshold: 0,
+        rootMargin: '600px'
+      });
+
+      document.querySelectorAll('div[data-src]').forEach(container => {
+        observer.observe(container);
+      });
+    </script>
+
+  </body>
+</html>
