@@ -9,28 +9,19 @@
     <main>
       <h1>P5 js exercises</h1>
       <p>
-        Look at the drawings below and try to recreate them with the <a href="https://editor.p5js.org/">p5.js editor</a>.
-        If you get stuck you can press on <i>hint</i> to get some help.
+        Chacune des pages ci-dessous contient une série d'exemples simples de code p5.
+        L'exercice consiste à essayer de les recréer dans <a href="https://editor.p5js.org/">l'éditeur p5</a>.
+        Il est préférable de les faire dans l'ordre, mais les plus difficiles peuvent être ignorés.
       </p>
+
+      <div class="mini-break"></div>
+
       <ul>
-        <li>🌱 = normal, should be solved in order</li>
-        <li>🌻 = medium, optional</li>
-        <li>🍄 = hard, for who wants a challenge</li>
+        <li><a href="/groupe-1.html">Groupe 1</a></li>
+        <li><a href="/groupe-2.html">Groupe 2</a></li>
       </ul>
+      <div data-src="exercise/test.html"></div>
 
-      <div class="break"></div>
-
-      <h2>Exercise 1</h2>
-
-      <div class="exercise">
-        <h3>1.1 Moving circle 🌱</h3>
-        <div data-src="exercise/code1.html"></div>
-        <details>
-          <summary>hint</summary>
-          <p>some info</p>
-          <p></p>
-        </details>
-      </div>
 
       <div class="exercise">
         <h3>Moving circle</h3>
@@ -51,35 +42,6 @@
           <p></p>
         </details>
       </div>
-
     </main>
-
-    <script>
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          const container = entry.target;
-          if (entry.isIntersecting) {
-            if (!container.querySelector('iframe')) {
-              const iframe = document.createElement('iframe');
-              iframe.src = container.dataset.src;
-              container.appendChild(iframe);
-            }
-          } else {
-            const iframe = container.querySelector('iframe');
-            if (iframe) {
-              iframe.remove(); // clean it up
-            }
-          }
-        });
-      }, {
-        threshold: 0,
-        rootMargin: '600px'
-      });
-
-      document.querySelectorAll('div[data-src]').forEach(container => {
-        observer.observe(container);
-      });
-    </script>
-
   </body>
 </html>
