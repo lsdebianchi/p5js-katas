@@ -7,16 +7,30 @@
   <body>
   </body>
   <script>
+var y = 200;
+var x = 200;
+var count = 0;
 function setup() {
   createCanvas(400, 400);
+  background(0);
+
 }
 
 function draw() {
-  background("black");
-  fill("white");
+  noStroke();
+  circle(x, y, 4);
+  y = y + random(-2, 2);
+  x = x + random(-2, 2);
 
-  text(key, 100, 100)
-  text(keyIsPressed, 100, 200)
+  count++;
+  if(count > 200){
+    count = 0;
+    vy = 0;
+    vx = 0;
+    y = 200;
+    x = 200;
+    background(0);
+  }
 }
   </script>
 </html>

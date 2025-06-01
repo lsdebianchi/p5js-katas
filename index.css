@@ -55,11 +55,24 @@ a {
   color: yellow;
 }
 
-iframe {
+li {
+  margin-bottom: 10px;
+}
+
+p.description {
+  color: rgba(255, 255, 255, 0.683);
+}
+
+iframe,
+.iframe-wrap {
   border: none;
   width: 400px;
   height: 400px;
   overflow: hidden;
+}
+
+details {
+  color: rgba(255, 255, 255, 0.683);
 }
 
 summary {
