@@ -610,7 +610,7 @@ function draw() {
 }`,
   },
   {
-    title: "harmonie",
+    title: "Harmonie",
     level: 1,
     description: "cliquer avec la souris et le clavier en même temps",
     hints: ["vous devrez utiliser l'opérateur &&"],
@@ -638,6 +638,30 @@ function draw() {
       fill(255, 0, 0);
     }
     circle(300, 200, 80);
+  }
+}`,
+  },
+  {
+    title: "Dessineur",
+    level: 2,
+    description: "cliquer et faire glisser la souris",
+    hints: [],
+    code: `var count = 0;
+function setup() {
+  createCanvas(400, 400);
+  background(0);
+}
+
+function draw() {
+  noStroke();
+  if(mouseIsPressed){
+    fill(255);
+    circle(mouseX, mouseY, 45);
+    count++;
+  }
+  if(count > 300) {
+    count = 0;
+    background(0);
   }
 }`,
   },
